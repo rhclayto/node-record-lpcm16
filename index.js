@@ -58,6 +58,20 @@ exports.start = function (options) {
         cmdArgs.unshift('-D', options.device)
       }
       break
+      // Arch Linux Raspberry Pi 3 uses PulseAudio.
+    case 'parecord':
+      cmd = 'parecord'
+      cmdArgs = [
+        '--rate', options.sampleRate, // sample rate
+        '--channel-map', 'front-left', // channels
+        '--file-format', 'wav', // audio type
+        '--format', 's16le', // Sample format
+        '-'                       // pipe
+      ]
+      if (options.device) {
+        cmdArgs.unshift('-D', options.device)
+      }
+      break
   }
 
   // Spawn audio capture command
