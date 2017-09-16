@@ -1,5 +1,7 @@
 # node-record-lpcm-16
 
+Forked.
+
 Records a 16-bit signed-integer linear pulse modulation code WAV audio file.
 
 This module uses Node.js streams to minimize memory usage and optimize speed, perfect for embedded devices and "the internet of things".
